@@ -48,6 +48,7 @@ public class StudentLWJGLController implements CS355LWJGLController
   public void resizeGL() 
   {
       //I think this is where I need to put the transfomrs.
+      //Use the constents define in the shell.
   }
 
     @Override
