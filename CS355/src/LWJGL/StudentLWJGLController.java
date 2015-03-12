@@ -63,10 +63,51 @@ public class StudentLWJGLController implements CS355LWJGLController
     @Override
     public void updateKeyboard() 
     {
-        if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
+        {
+            System.out.println("You are pressing A!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
+        {
+            System.out.println("You are pressing D!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
         }
+         else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
+        {
+            System.out.println("You are pressing S!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
+        {
+            System.out.println("You are pressing Q!");
+        }
+         else if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
+        {
+            System.out.println("You are pressing E!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
+        {
+            System.out.println("You are pressing R!");
+        }
+         else if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
+        {
+            System.out.println("You are pressing F!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
+        {
+            System.out.println("You are pressing H!");
+        }
+         else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
+        {
+            System.out.println("You are pressing O!");
+        }
+        else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
+        {
+            System.out.println("You are pressing P!");
+        }
+
     }
 
     //This method is the one that actually draws to the screen.
