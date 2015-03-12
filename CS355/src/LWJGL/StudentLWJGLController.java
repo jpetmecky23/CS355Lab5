@@ -47,7 +47,7 @@ public class StudentLWJGLController implements CS355LWJGLController
   @Override
   public void resizeGL() 
   {
-
+      //I think this is where I need to put the transfomrs.
   }
 
     @Override
