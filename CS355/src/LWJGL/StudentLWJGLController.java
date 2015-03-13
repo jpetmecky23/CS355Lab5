@@ -9,6 +9,9 @@ package LWJGL;
 //Therefore, if a command appears in this list, you probably need it.
 //If it doesn't appear in this list, you probably don't.
 //Of course, your milage may vary. Don't feel restricted by this list of imports.
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+import java.util.Iterator;
 import org.lwjgl.input.Keyboard;
 import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
 import static org.lwjgl.opengl.GL11.GL_LINES;
@@ -119,6 +122,10 @@ public class StudentLWJGLController implements CS355LWJGLController
         glClear(GL_COLOR_BUFFER_BIT);
         
         //Do your drawing here.
+        for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
+            
+        }
+        
     }
     
 }
