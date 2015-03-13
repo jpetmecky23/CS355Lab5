@@ -123,7 +123,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         
         //Do your drawing here.
         for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
-            
+            Line3D l = iter.next();
         }
         
     }
