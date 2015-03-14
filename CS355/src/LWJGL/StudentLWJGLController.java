@@ -123,7 +123,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing O!");
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
-              glOrtho(-1f, 1f, -1f, 1f, 5f, 100f);
+              glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
