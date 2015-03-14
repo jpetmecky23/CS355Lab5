@@ -50,7 +50,7 @@ public class StudentLWJGLController implements CS355LWJGLController
   @Override
   public void resizeGL() 
   {
-      //I think this is where I need to put the transfomrs.
+      //I think this is where I need to put the transfoms.
       //Use the constents define in the shell.
   }
 
@@ -125,7 +125,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         //Do your drawing here.
         glColor3f(0, 255, 0);
         glPushMatrix();
-        glTranslatef(0.0f, 0.0f, 0.0f);
+        glTranslatef(LWJGLSandbox.DISPLAY_WIDTH/ 2, LWJGLSandbox.DISPLAY_HEIGHT / 2, 0.0f);
         glRotatef(angle, 0.0f, 0.0f, 0.0f);
         glBegin(GL_LINES);
         for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
