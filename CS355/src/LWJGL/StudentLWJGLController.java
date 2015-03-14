@@ -118,14 +118,23 @@ public class StudentLWJGLController implements CS355LWJGLController
     @Override
     public void render() 
     {
+        float angle = 0;
         //This clears the screen.
         glClear(GL_COLOR_BUFFER_BIT);
         
         //Do your drawing here.
+        glColor3f(0, 255, 0);
+        glPushMatrix();
+        glTranslatef(0.0f, 0.0f, 0.0f);
+        glRotatef(angle, 0.0f, 0.0f, 0.0f);
+        glBegin(GL_LINES);
         for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
             Line3D l = iter.next();
+            glVertex3d(l.start.x, l.start.y, l.start.z);
+            glVertex3d(l.end.x, l.end.y, l.end.z);
         }
-        
+        glEnd();
+       // glPopMatrix();
     }
     
 }
