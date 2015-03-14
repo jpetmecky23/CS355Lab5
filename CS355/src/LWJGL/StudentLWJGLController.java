@@ -128,6 +128,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         {
             System.out.println("You are pressing P!");
               //glMatrixMode(GL_PROJECTION);
+            glPopMatrix();
               gluPerspective(60.0f, 1.33f, 5f, 20f);
         }
 
