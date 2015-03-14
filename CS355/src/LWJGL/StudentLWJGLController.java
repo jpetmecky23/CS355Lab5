@@ -29,6 +29,7 @@ import static org.lwjgl.opengl.GL11.glTranslatef;
 import static org.lwjgl.opengl.GL11.glVertex3d;
 import static org.lwjgl.opengl.GL11.glViewport;
 import static org.lwjgl.opengl.GL11.glOrtho;
+import static org.lwjgl.opengl.GL11.glPopMatrix;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
 /**
@@ -75,18 +76,22 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
+            glTranslatef(1.0f, 0.0f, 0.0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
+            glTranslatef(-1.0f, 0.0f, 0.0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
+            glTranslatef(0.0f, 1.0f, 0.0f);
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
+            glTranslatef(0.0f, -1.0f, 0.0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
@@ -130,8 +135,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         //Do your drawing here.
         glColor3f(0, 255, 0);
         glPushMatrix();
-        glTranslatef(LWJGLSandbox.DISPLAY_WIDTH/ 2, LWJGLSandbox.DISPLAY_HEIGHT / 2, 0.0f);
-        glRotatef(angle, 0.0f, 0.0f, 0.0f);
+        
+        //glRotatef(angle, 0.0f, 0.0f, 0.0f);
         glBegin(GL_LINES);
         for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
             Line3D l = iter.next();
@@ -139,7 +144,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             glVertex3d(l.end.x, l.end.y, l.end.z);
         }
         glEnd();
-       // glPopMatrix();
+        //glPopMatrix();
     }
     
 }
