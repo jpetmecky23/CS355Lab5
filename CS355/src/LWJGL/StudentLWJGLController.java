@@ -121,15 +121,16 @@ public class StudentLWJGLController implements CS355LWJGLController
          else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
             System.out.println("You are pressing O!");
-             // glMatrixMode(GL_MODELVIEW);
+              glMatrixMode(GL_PROJECTION);
+              glLoadIdentity();
               glOrtho(-15f, 15f, -15f, 15f, 5f, 100f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
-              //glMatrixMode(GL_PROJECTION);
-            glPopMatrix();
-              gluPerspective(60.0f, 1.33f, 5f, 20f);
+            glMatrixMode(GL_PROJECTION);
+            glLoadIdentity();
+            gluPerspective(60.0f, 1.33f, 5f, 20f);
         }
 
     }
