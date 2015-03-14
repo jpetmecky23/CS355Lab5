@@ -127,7 +127,6 @@ public class StudentLWJGLController implements CS355LWJGLController
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
               glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
-              glMatrixMode(GL_MODELVIEW);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
@@ -135,8 +134,8 @@ public class StudentLWJGLController implements CS355LWJGLController
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
-            glMatrixMode(GL_MODELVIEW);
         }
+        glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
         glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera, yCamera, zCamera);
