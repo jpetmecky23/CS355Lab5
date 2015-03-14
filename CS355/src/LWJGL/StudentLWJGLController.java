@@ -55,7 +55,7 @@ public class StudentLWJGLController implements CS355LWJGLController
       //Use the constents define in the shell.
       
       glViewport(0, 0, LWJGLSandbox.DISPLAY_WIDTH, LWJGLSandbox.DISPLAY_HEIGHT);
-      glMatrixMode(GL_PROJECTION);
+      glMatrixMode(GL_MODELVIEW);
       glLoadIdentity();
       gluPerspective(60.0f, 1.33f, 5f, 100f);
   }
@@ -128,7 +128,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
-            glMatrixMode(GL_PROJECTION);
+            glMatrixMode(GL_MODELVIEW);
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
         }
