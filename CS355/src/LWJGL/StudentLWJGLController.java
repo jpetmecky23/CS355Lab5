@@ -35,10 +35,10 @@ import static org.lwjgl.util.glu.GLU.gluPerspective;
  */
 public class StudentLWJGLController implements CS355LWJGLController 
 {
-  float x = 0;
-  float y = 0;
-  float z = 0;
-  float angle = 0;
+  private float xCamera = 0;
+  private float yCamera = 0;
+  private float zCamera = 0;
+  private float angleCamera = 0;
   //This is a model of a house.
   //It has a single method that returns an iterator full of Line3Ds.
   //A "Line3D" is a wrapper class around two Point2Ds.
@@ -76,50 +76,50 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            x++;
+            xCamera++;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            x--;
+            xCamera--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            z++;
+            zCamera++;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            z--;
+            zCamera--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            angle++;
+            angleCamera++;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            angle--;
+            angleCamera--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
             System.out.println("You are pressing R!");
-            y--;
+            yCamera--;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
         {
             System.out.println("You are pressing F!");
-            y++;
+            yCamera++;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
         {
             System.out.println("You are pressing H!");
-            x = 0;
-            y = 0;
-            z = 0;
-            angle = 0;
+            xCamera = 0;
+            yCamera = 0;
+            zCamera = 0;
+            angleCamera = 0;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
@@ -137,8 +137,8 @@ public class StudentLWJGLController implements CS355LWJGLController
             gluPerspective(60.0f, 1.33f, 5f, 100f);
             glMatrixMode(GL_MODELVIEW);
         }
-        glRotatef(angle, 0, 1, 0);
-        glTranslatef(x, y, z);
+        glRotatef(angleCamera, 0, 1, 0);
+        glTranslatef(xCamera, yCamera, zCamera);
     }
 
     //This method is the one that actually draws to the screen.
