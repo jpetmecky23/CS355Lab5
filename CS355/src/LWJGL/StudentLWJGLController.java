@@ -86,12 +86,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            glTranslatef(0.0f, 1.0f, 0.0f);
+            glTranslatef(0.0f, 0.0f, 1.0f);
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            glTranslatef(0.0f, -1.0f, 0.0f);
+            glTranslatef(0.0f, 0.0f, -1.0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
@@ -104,10 +104,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
             System.out.println("You are pressing R!");
+            glTranslatef(0.0f, 1.0f, 0.0f);
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
         {
             System.out.println("You are pressing F!");
+            glTranslatef(0.0f, -1.0f, 0.0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
         {
