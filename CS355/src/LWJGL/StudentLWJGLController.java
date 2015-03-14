@@ -78,42 +78,42 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing A!");
             xCamera++;
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
             xCamera--;
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
             zCamera++;
         }
-         else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
             zCamera--;
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
             angleCamera++;
         }
-         else if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
             angleCamera--;
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
             System.out.println("You are pressing R!");
             yCamera--;
         }
-         else if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
+         if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
         {
             System.out.println("You are pressing F!");
             yCamera++;
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
         {
             System.out.println("You are pressing H!");
             xCamera = 0;
@@ -121,7 +121,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             zCamera = 0;
             angleCamera = 0;
         }
-         else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
+         if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
             System.out.println("You are pressing O!");
               glMatrixMode(GL_PROJECTION);
@@ -129,7 +129,7 @@ public class StudentLWJGLController implements CS355LWJGLController
               glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
               glMatrixMode(GL_MODELVIEW);
         }
-        else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
+        if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
             glMatrixMode(GL_PROJECTION);
@@ -137,6 +137,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             gluPerspective(60.0f, 1.33f, 5f, 100f);
             glMatrixMode(GL_MODELVIEW);
         }
+        glLoadIdentity();
         glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera, yCamera, zCamera);
     }
