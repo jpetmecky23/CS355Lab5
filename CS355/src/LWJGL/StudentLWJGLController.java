@@ -96,12 +96,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            glRotatef(1, 0, 0, 0);
+            glRotatef(-1f, 0f, 0f, 0f);
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            glRotatef(-1, 0, 0, 0);
+            glRotatef(1f, 0f, 0f, 0f);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
