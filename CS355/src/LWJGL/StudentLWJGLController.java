@@ -95,7 +95,7 @@ public class StudentLWJGLController implements CS355LWJGLController
          else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            z++;
+            z--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
