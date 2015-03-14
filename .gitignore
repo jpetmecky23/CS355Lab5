@@ -45,3 +45,4 @@ Temporary Items
 /CS355/build/
 CS355/errors.log.lck
 CS355/errors.log.1
+*.log
