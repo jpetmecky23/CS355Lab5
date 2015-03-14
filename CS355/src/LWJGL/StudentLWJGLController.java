@@ -9,8 +9,6 @@ package LWJGL;
 //Therefore, if a command appears in this list, you probably need it.
 //If it doesn't appear in this list, you probably don't.
 //Of course, your milage may vary. Don't feel restricted by this list of imports.
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 import java.util.Iterator;
 import org.lwjgl.input.Keyboard;
 import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
@@ -29,7 +27,6 @@ import static org.lwjgl.opengl.GL11.glTranslatef;
 import static org.lwjgl.opengl.GL11.glVertex3d;
 import static org.lwjgl.opengl.GL11.glViewport;
 import static org.lwjgl.opengl.GL11.glOrtho;
-import static org.lwjgl.opengl.GL11.glPopMatrix;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
 /**
@@ -38,7 +35,6 @@ import static org.lwjgl.util.glu.GLU.gluPerspective;
  */
 public class StudentLWJGLController implements CS355LWJGLController 
 {
-  boolean ortho = false;
   float x = 0;
   float y = 0;
   float z = 0;
@@ -128,7 +124,6 @@ public class StudentLWJGLController implements CS355LWJGLController
          else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
             System.out.println("You are pressing O!");
-            ortho = true;
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
               glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
@@ -137,7 +132,6 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
-            ortho = false;
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
@@ -151,15 +145,12 @@ public class StudentLWJGLController implements CS355LWJGLController
     @Override
     public void render() 
     {
-        float angle = 0;
         //This clears the screen.
         glClear(GL_COLOR_BUFFER_BIT);
         
         //Do your drawing here.
         glColor3f(0, 255, 0);
         glPushMatrix();
-        
-        //glRotatef(angle, 0.0f, 0.0f, 0.0f);
         glBegin(GL_LINES);
         for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
             Line3D l = iter.next();
