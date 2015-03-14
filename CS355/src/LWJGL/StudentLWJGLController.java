@@ -52,6 +52,8 @@ public class StudentLWJGLController implements CS355LWJGLController
   {
       //I think this is where I need to put the transfoms.
       //Use the constents define in the shell.
+      glMatrixMode(GL_MODELVIEW);
+      glViewport(0, 0, LWJGLSandbox.DISPLAY_WIDTH, LWJGLSandbox.DISPLAY_HEIGHT);
   }
 
     @Override
