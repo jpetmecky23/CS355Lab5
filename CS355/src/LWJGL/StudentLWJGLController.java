@@ -58,6 +58,8 @@ public class StudentLWJGLController implements CS355LWJGLController
       glMatrixMode(GL_MODELVIEW);
       glLoadIdentity();
       gluPerspective(60.0f, 1.33f, 5f, 100f);
+      glRotatef(angleCamera, 0, 1, 0);
+      glTranslatef(xCamera, yCamera, zCamera);
   }
 
     @Override
