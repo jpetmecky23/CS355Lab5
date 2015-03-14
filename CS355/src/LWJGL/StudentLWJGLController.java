@@ -39,6 +39,10 @@ import static org.lwjgl.util.glu.GLU.gluPerspective;
 public class StudentLWJGLController implements CS355LWJGLController 
 {
   boolean ortho = false;
+  float x = 0;
+  float y = 0;
+  float z = 0;
+  float angle = 0;
   //This is a model of a house.
   //It has a single method that returns an iterator full of Line3Ds.
   //A "Line3D" is a wrapper class around two Point2Ds.
@@ -55,7 +59,7 @@ public class StudentLWJGLController implements CS355LWJGLController
       //Use the constents define in the shell.
       
       glViewport(0, 0, LWJGLSandbox.DISPLAY_WIDTH, LWJGLSandbox.DISPLAY_HEIGHT);
-      glMatrixMode(GL_PROJECTION);
+      glMatrixMode(GL_MODELVIEW);
       glLoadIdentity();
       gluPerspective(60.0f, 1.33f, 5f, 100f);
   }
@@ -76,55 +80,50 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            glTranslatef(1.0f, 0.0f, 0.0f);
+            x++;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            glTranslatef(-1.0f, 0.0f, 0.0f);
+            x--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            glTranslatef(0.0f, 0.0f, 1.0f);
+            z++;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            glTranslatef(0.0f, 0.0f, -1.0f);
+            z++;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            glRotatef(-1f, 0f, 0f, 0f);
+            angle++;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            glRotatef(1f, 0f, 0f, 0f);
+            angle--;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
             System.out.println("You are pressing R!");
-            glTranslatef(0.0f, -1.0f, 0.0f);
+            y--;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_F)) 
         {
             System.out.println("You are pressing F!");
-            glTranslatef(0.0f, 1.0f, 0.0f);
+            y++;
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
         {
             System.out.println("You are pressing H!");
-            if(ortho){
-                glLoadIdentity();
-              glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
-            }
-            else{
-            glLoadIdentity();
-            gluPerspective(60.0f, 1.33f, 5f, 100f);
-            }
-            
+            x = 0;
+            y = 0;
+            z = 0;
+            angle = 0;
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
@@ -133,6 +132,7 @@ public class StudentLWJGLController implements CS355LWJGLController
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
               glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
+              glMatrixMode(GL_MODELVIEW);
         }
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
@@ -141,8 +141,10 @@ public class StudentLWJGLController implements CS355LWJGLController
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
+            glMatrixMode(GL_MODELVIEW);
         }
-
+        glRotatef(angle, 0, 1, 0);
+        glTranslatef(x, y, z);
     }
 
     //This method is the one that actually draws to the screen.
