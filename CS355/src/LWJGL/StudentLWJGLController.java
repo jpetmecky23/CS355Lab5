@@ -38,7 +38,7 @@ import static org.lwjgl.util.glu.GLU.gluPerspective;
  */
 public class StudentLWJGLController implements CS355LWJGLController 
 {
-  
+  boolean ortho = false;
   //This is a model of a house.
   //It has a single method that returns an iterator full of Line3Ds.
   //A "Line3D" is a wrapper class around two Point2Ds.
@@ -114,13 +114,20 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_H)) 
         {
             System.out.println("You are pressing H!");
+            if(ortho){
+                glLoadIdentity();
+              glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
+            }
+            else{
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
+            }
             
         }
          else if(Keyboard.isKeyDown(Keyboard.KEY_O)) 
         {
             System.out.println("You are pressing O!");
+            ortho = true;
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
               glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
@@ -128,6 +135,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         else if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
+            ortho = false;
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
             gluPerspective(60.0f, 1.33f, 5f, 100f);
