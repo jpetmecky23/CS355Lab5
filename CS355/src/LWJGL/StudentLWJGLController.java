@@ -27,6 +27,7 @@ import static org.lwjgl.opengl.GL11.glTranslatef;
 import static org.lwjgl.opengl.GL11.glVertex3d;
 import static org.lwjgl.opengl.GL11.glViewport;
 import static org.lwjgl.opengl.GL11.glOrtho;
+import static org.lwjgl.opengl.GL11.glPopMatrix;
 import static org.lwjgl.util.glu.GLU.gluPerspective;
 
 /**
@@ -60,7 +61,7 @@ public class StudentLWJGLController implements CS355LWJGLController
       glRotatef(angleCamera, 0, 1, 0);
       glTranslatef(xCamera, yCamera, zCamera);
       glMatrixMode(GL_PROJECTION);
-      gluPerspective(60.0f, 1.33f, 5f, 100f);
+      gluPerspective(60.0f, 1.33f, 5f, 1000f);
   }
 
     @Override
@@ -129,14 +130,14 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing O!");
               glMatrixMode(GL_PROJECTION);
               glLoadIdentity();
-              glOrtho(-10f, 10f, -10f, 10f, 5f, 100f);
+              glOrtho(-10f, 10f, -10f, 10f, 5f, 1000f);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_P)) 
         {
             System.out.println("You are pressing P!");
             glMatrixMode(GL_PROJECTION);
             glLoadIdentity();
-            gluPerspective(60.0f, 1.33f, 5f, 100f);
+            gluPerspective(60.0f, 1.33f, 5f, 1000f);
         }
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
@@ -157,7 +158,6 @@ public class StudentLWJGLController implements CS355LWJGLController
         glBegin(GL_LINES);
         for(int i = 0; i < 5; i++){
         glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
         glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera + offset, yCamera, zCamera);
             for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
@@ -165,10 +165,10 @@ public class StudentLWJGLController implements CS355LWJGLController
                 glVertex3d(l.start.x, l.start.y, l.start.z);
                 glVertex3d(l.end.x, l.end.y, l.end.z);
             }
-            offset += 20;
+            offset += 15;
         }
         glEnd();
-        //glPopMatrix();
+        glPopMatrix();
     }
     
 }
