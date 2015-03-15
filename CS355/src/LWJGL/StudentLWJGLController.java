@@ -47,14 +47,16 @@ public class StudentLWJGLController implements CS355LWJGLController
   //If not, I apologize.
   
   //Compensates for the angle
-  private float angleCompZ(float z){
-      z = (float) Math.cos((double)this.angleCamera);
+  private float angleCompZ(){
+      float z = (float) Math.cos((double)this.angleCamera);
+      z = 1 - (z * z);
       return z;
   }
   
   //Compensates for the angle
-  private float angleCompX(float x){
-      x = (float) Math.sin((double)this.angleCamera);
+  private float angleCompX(){
+     float x = (float) Math.sin((double)this.angleCamera);
+     x = 1 - (x * x);
       return x;
   }
   
@@ -93,26 +95,26 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            xCamera+= angleCompX(0);
-            zCamera+= angleCompZ(0);
+            xCamera+= angleCompX();
+            zCamera+= angleCompZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            xCamera-= angleCompX(1);
-            zCamera-= angleCompZ(1);
+            xCamera-= angleCompX();
+            zCamera-= angleCompZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            xCamera+= angleCompX(0);
-            zCamera+= angleCompZ(1);
+            xCamera+= angleCompX();
+            zCamera+= angleCompZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            xCamera-= angleCompX(0);
-            zCamera-= angleCompZ(1);
+            xCamera-= angleCompX();
+            zCamera-= angleCompZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
