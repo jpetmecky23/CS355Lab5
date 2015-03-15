@@ -47,18 +47,19 @@ public class StudentLWJGLController implements CS355LWJGLController
   //If not, I apologize.
   
   //Compensates for the angle
-  private float angleCos(){
-      float z = (float) Math.sin((double)(this.angleCamera * (Math.PI / 180)));
+  private float angleCos(float theta){
+      float z = (float) Math.sin((double)theta * (Math.PI / 180));
       z = 1 - (z * z);
       return z;
   }
   
   //Compensates for the angle
-  private float angleSin(){
-     float x = (float) Math.cos((double)this.angleCamera * (Math.PI / 180));
+  private float angleSin(float theta){
+     float x = (float) Math.cos((double)theta * (Math.PI / 180));
      x = 1 - (x * x);
       return x;
   }
+  
   
   private WireFrame model = new HouseModel();
 
@@ -95,26 +96,26 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            zCamera+= angleSin();
-            xCamera-= angleCos();
+            zCamera-= angleSin(this.angleCamera + 90);
+            xCamera+= angleCos(this.angleCamera + 90);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            zCamera-= angleSin();
-            xCamera+= angleCos();
+            zCamera+= angleSin(this.angleCamera + 90);
+            xCamera-= angleCos(this.angleCamera + 90);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            zCamera+= angleCos();
-            xCamera-= angleSin();
+            zCamera+= angleCos(this.angleCamera);
+            xCamera-= angleSin(this.angleCamera);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            zCamera-= angleCos();
-            xCamera+= angleSin();
+            zCamera-= angleCos(this.angleCamera);
+            xCamera+= angleSin(this.angleCamera);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
