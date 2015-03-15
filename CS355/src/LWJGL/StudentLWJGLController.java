@@ -45,6 +45,19 @@ public class StudentLWJGLController implements CS355LWJGLController
   //A "Line3D" is a wrapper class around two Point2Ds.
   //It should all be fairly intuitive if you look at those classes.
   //If not, I apologize.
+  
+  //Compensates for the angle
+  private float angleCompX(float x){
+      x = (float) Math.cos((double)this.angleCamera);
+      return x;
+  }
+  
+  //Compensates for the angle
+  private float angleCompZ(float z){
+      z = (float) Math.sin((double)this.angleCamera);
+      return z;
+  }
+  
   private WireFrame model = new HouseModel();
 
   //This method is called to "resize" the viewport to match the screen.
@@ -80,22 +93,26 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            xCamera++;
+            xCamera+= angleCompX(1);
+            zCamera+= angleCompZ(0);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            xCamera--;
+            xCamera-= angleCompX(1);
+            zCamera-= angleCompZ(0);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            zCamera++;
+            xCamera+= angleCompX(0);
+            zCamera+= angleCompZ(1);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
-            zCamera--;
+            xCamera-= angleCompX(0);
+            zCamera-= angleCompZ(1);
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
