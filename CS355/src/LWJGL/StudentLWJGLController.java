@@ -95,24 +95,26 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            
+            zCamera+= angleSin();
+            xCamera-= angleCos();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            
+            zCamera-= angleSin();
+            xCamera+= angleCos();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
             zCamera+= angleCos();
-            xCamera+= angleSin();
+            xCamera-= angleSin();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             System.out.println("You are pressing S!");
             zCamera-= angleCos();
-            xCamera-= angleSin();
+            xCamera+= angleSin();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
