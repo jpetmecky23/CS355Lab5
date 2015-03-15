@@ -141,8 +141,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         }
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        glTranslatef(xCamera, yCamera, zCamera);
         glRotatef(angleCamera, 0, 1, 0);
+        glTranslatef(xCamera, yCamera, zCamera);
     }
 
     //This method is the one that actually draws to the screen.
