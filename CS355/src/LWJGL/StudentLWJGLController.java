@@ -100,12 +100,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            angleCamera++;
+            angleCamera--;
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            angleCamera--;
+            angleCamera++;
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
@@ -141,8 +141,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         }
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera, yCamera, zCamera);
+        glRotatef(angleCamera, 0, 1, 0);
     }
 
     //This method is the one that actually draws to the screen.
@@ -156,7 +156,6 @@ public class StudentLWJGLController implements CS355LWJGLController
         glColor3f(0, 255, 0);
         glPushMatrix();
         for(int i = 0; i < 5; i++){
-            //glRotatef(angleCamera, 0, 1, 0);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
