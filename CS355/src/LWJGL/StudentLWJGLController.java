@@ -48,14 +48,14 @@ public class StudentLWJGLController implements CS355LWJGLController
   
   //Compensates for the angle
   private float angleCos(){
-      float z = (float) Math.sin((double)this.angleCamera);
+      float z = (float) Math.sin((double)(this.angleCamera * (Math.PI / 180)));
       z = 1 - (z * z);
       return z;
   }
   
   //Compensates for the angle
   private float angleSin(){
-     float x = (float) Math.cos((double)this.angleCamera);
+     float x = (float) Math.cos((double)this.angleCamera * (Math.PI / 180));
      x = 1 - (x * x);
       return x;
   }
