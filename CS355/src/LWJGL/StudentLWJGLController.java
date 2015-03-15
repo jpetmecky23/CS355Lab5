@@ -156,19 +156,19 @@ public class StudentLWJGLController implements CS355LWJGLController
         glColor3f(0, 255, 0);
         glPushMatrix();
         for(int i = 0; i < 5; i++){
-        //glRotatef(angleCamera, 0, 1, 0);
-            glBegin(GL_LINES);           
-            for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
-                Line3D l = iter.next();
-                glVertex3d(l.start.x, l.start.y, l.start.z);
-                glVertex3d(l.end.x, l.end.y, l.end.z);
-            }
-            glEnd();
-            offset += 15;
+            //glRotatef(angleCamera, 0, 1, 0);
             glMatrixMode(GL_MODELVIEW);
-            glTranslatef(xCamera + offset, yCamera, zCamera);
+            glTranslatef(offset, 0, 0);
+            glBegin(GL_LINES);           
+                for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
+                    Line3D l = iter.next();
+                    glVertex3d(l.start.x, l.start.y, l.start.z);
+                    glVertex3d(l.end.x, l.end.y, l.end.z);
+                }
+            glEnd();
+            offset = 15;
         }
-        //glPopMatrix();
+        glPopMatrix();
     }
     
 }
