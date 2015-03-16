@@ -96,37 +96,32 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            zCamera+= angleSin(this.angleCamera);
-            xCamera+= angleCos(this.angleCamera);
+            moveLeft();
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            zCamera-= angleSin(this.angleCamera);
-            xCamera-= angleCos(this.angleCamera);
+            moveRight();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            zCamera+= angleCos(this.angleCamera);
-            xCamera-= angleSin(this.angleCamera);
+            moveForward();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
-            System.out.println("You are pressing S!");
-            zCamera-= angleCos(this.angleCamera);
-            xCamera+= angleSin(this.angleCamera);
+            moveBackward();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            angleCamera--;
+            decressAngleCamera();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            angleCamera++;
+            incressAngleCamera();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
@@ -164,6 +159,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         glLoadIdentity();
         glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera, yCamera, zCamera);
+        System.out.println("Angle" + angleCamera);
     }
 
     //This method is the one that actually draws to the screen.
@@ -190,5 +186,105 @@ public class StudentLWJGLController implements CS355LWJGLController
         }
         glPopMatrix();
     }
+       public void decressAngleCamera() {
+        if((angleCamera - 1) < 0){
+                angleCamera = 359;
+            }
+            else{
+             angleCamera--;
+            }
+    }
     
+    public void incressAngleCamera() {
+        if((angleCamera + 1) > 359){
+                angleCamera = 0;
+            }
+            else{
+             angleCamera++;
+            }
+    }
+    
+    public void moveForward(){
+        if(angleCamera < 90){
+            quad2();
+        }
+        else if(angleCamera < 180){
+            
+        }
+        
+        else if(angleCamera < 270){
+            
+        }
+        else{
+            
+        }
+    }
+    
+    public void moveBackward(){
+        if(angleCamera < 90){
+            quad4();
+        }
+        else if(angleCamera < 180){
+            
+        }
+        
+        else if(angleCamera < 270){
+            
+        }
+        else{
+            
+        }
+    }
+    
+    public void moveLeft(){
+        if(angleCamera < 90){
+            quad1();
+        }
+        else if(angleCamera < 180){
+            
+        }
+        
+        else if(angleCamera < 270){
+            
+        }
+        else{
+            
+        }
+    }
+    
+    public void moveRight(){
+        if(angleCamera < 90){
+            quad3();
+        }
+        else if(angleCamera < 180){
+            
+        }
+        
+        else if(angleCamera < 270){
+            
+        }
+        else{
+            
+        }
+    }
+    
+    public void quad1(){
+        zCamera+= angleSin(this.angleCamera);
+        xCamera+= angleCos(this.angleCamera);
+    }
+    
+    public void quad2(){
+        zCamera+= angleCos(this.angleCamera);
+        xCamera-= angleSin(this.angleCamera);
+    }
+    
+    public void quad3(){
+        zCamera-= angleSin(this.angleCamera);
+        xCamera-= angleCos(this.angleCamera);
+    }
+    
+    public void quad4(){
+        zCamera-= angleCos(this.angleCamera);
+        xCamera+= angleSin(this.angleCamera);
+    }
 }
