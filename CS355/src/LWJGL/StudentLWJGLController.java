@@ -96,14 +96,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            if(angleCamera < 0){
-                zCamera+= angleSin(this.angleCamera);
-                xCamera+= angleCos(this.angleCamera);
-            }
-            else{
-                zCamera+= angleCos(this.angleCamera);
-                xCamera-= angleSin(this.angleCamera); 
-            }
+            zCamera+= angleSin(this.angleCamera);
+            xCamera+= angleCos(this.angleCamera);
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
@@ -127,12 +121,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
             System.out.println("You are pressing Q!");
-            decressAngleCamera();
+            angleCamera--;
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
-            incressAngleCamera();
+            angleCamera++;
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
@@ -195,24 +189,6 @@ public class StudentLWJGLController implements CS355LWJGLController
             offset = 15;
         }
         glPopMatrix();
-    }
-
-    public void decressAngleCamera() {
-        if((angleCamera - 1) < -179){
-                angleCamera = 179;
-            }
-            else{
-             angleCamera--;
-            }
-    }
-    
-    public void incressAngleCamera() {
-        if((angleCamera + 1) > 179){
-                angleCamera = -179;
-            }
-            else{
-             angleCamera++;
-            }
     }
     
 }
