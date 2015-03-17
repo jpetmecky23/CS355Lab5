@@ -206,84 +206,84 @@ public class StudentLWJGLController implements CS355LWJGLController
     
     public void moveForward(){
         if(angleCamera < 90){
-            quad1();
+            quad2();
         }
         else if(angleCamera < 180){
-           quad4();
+           quad2();
         }
         
         else if(angleCamera < 270){
-            quad3();
+            quad4();
         }
         else{
-            quad2();
+            
         }
     }
     
     public void moveBackward(){
         if(angleCamera < 90){
-            quad3();
+            quad4();
         }
         else if(angleCamera < 180){
-            quad2();
+            quad1();
         }
         
         else if(angleCamera < 270){
-            quad1();
+            quad2();
         }
         else{
-            quad4();
+            
         }
     }
     
     public void moveLeft(){
         if(angleCamera < 90){
-            quad2();
+            quad1();
         }
         else if(angleCamera < 180){
-            quad1();
+            quad4();
         }
         
         else if(angleCamera < 270){
-            quad4();
+            quad3();
         }
         else{
-            quad3();
+            
         }
     }
     
     public void moveRight(){
         if(angleCamera < 90){
-            quad4();
+            quad3();
         }
         else if(angleCamera < 180){
-            quad3();
+            quad2();
         }
         
         else if(angleCamera < 270){
-            quad2();
+            quad1();
         }
         else{
-            quad1();
+            
         }
     }
     
-    public void quad3(){
+    public void quad1(){
         zCamera+= angleSin(this.angleCamera);
         xCamera+= angleCos(this.angleCamera);
     }
     
-    public void quad4(){
+    public void quad2(){
         zCamera+= angleCos(this.angleCamera);
         xCamera-= angleSin(this.angleCamera);
     }
     
-    public void quad1(){
+    public void quad3(){
         zCamera-= angleSin(this.angleCamera);
         xCamera-= angleCos(this.angleCamera);
     }
     
-    public void quad2(){
+    public void quad4(){
         zCamera-= angleCos(this.angleCamera);
         xCamera+= angleSin(this.angleCamera);
     }
