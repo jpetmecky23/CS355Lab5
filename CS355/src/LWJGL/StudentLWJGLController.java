@@ -215,19 +215,19 @@ public class StudentLWJGLController implements CS355LWJGLController
     
     public void updateX(){
         if(angleCamera < 180){
-            xCamera = (float) Math.cos(Math.toRadians(this.angleCamera));
+            xCamera += (float) Math.cos(Math.toRadians(this.angleCamera));
         }
         else{
-            xCamera = (float)Math.cos(180 - Math.toRadians(this.angleCamera));
+            xCamera -= (float)Math.cos(180 - Math.toRadians(this.angleCamera));
         }
     }
     
     public void updateZ(){
         if(angleCamera < 180){
-            zCamera = (float) Math.sin(180 - Math.toRadians(this.angleCamera));
+            zCamera += (float) Math.sin(180 - Math.toRadians(this.angleCamera));
         }
         else{
-            zCamera = (float) Math.sin(180 - Math.toRadians(this.angleCamera));
+            zCamera -= (float) Math.sin(180 - Math.toRadians(this.angleCamera));
         }
     }
     
