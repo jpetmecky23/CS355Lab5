@@ -188,7 +188,7 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     public void decressAngleCamera() {
         if((angleCamera - 1) < 0){
-                angleCamera = 359;
+                angleCamera = 179;
             }
             else{
              angleCamera--;
@@ -196,7 +196,7 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     
     public void incressAngleCamera() {
-        if((angleCamera + 1) > 359){
+        if((angleCamera + 1) > 179){
                 angleCamera = 0;
             }
             else{
