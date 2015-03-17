@@ -254,10 +254,10 @@ public class StudentLWJGLController implements CS355LWJGLController
     
     public void moveRight(){
         if(angleCamera < 90){
-            quad1();
+            quad3();
         }
         else if(angleCamera < 180){
-            quad2();
+            quad3();
         }
         
         else if(angleCamera < 270){
