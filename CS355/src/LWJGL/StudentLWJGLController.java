@@ -84,7 +84,7 @@ public class StudentLWJGLController implements CS355LWJGLController
     //An example keyboard event is captured below.
     //The "Keyboard" static class should contain everything you need to finish
     // this up.
-    @Override
+    @Override//almost
     public void updateKeyboard() 
     {
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
