@@ -209,14 +209,14 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad2();
         }
         else if(angleCamera < 180){
-            
+           quad1();
         }
         
         else if(angleCamera < 270){
-            
+            quad4();
         }
         else{
-            
+            quad3();
         }
     }
     
@@ -225,14 +225,14 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad4();
         }
         else if(angleCamera < 180){
-            
+            quad3();
         }
         
         else if(angleCamera < 270){
-            
+            quad2();
         }
         else{
-            
+            quad1();
         }
     }
     
@@ -241,14 +241,14 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad1();
         }
         else if(angleCamera < 180){
-            
+            quad2();
         }
         
         else if(angleCamera < 270){
-            
+            quad3();
         }
         else{
-            
+            quad4();
         }
     }
     
@@ -257,14 +257,14 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad3();
         }
         else if(angleCamera < 180){
-            
+            quad4();
         }
         
         else if(angleCamera < 270){
-            
+            quad1();
         }
         else{
-            
+            quad2();
         }
     }
     
