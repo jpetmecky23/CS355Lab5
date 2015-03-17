@@ -49,8 +49,9 @@ public class StudentLWJGLController implements CS355LWJGLController
   //Compensates for the angle
   private void updateAngle(){
       if(xCamera != 0){
-      float tempAngle = (float) (Math.toDegrees(Math.atan2(yCamera, xCamera)));
+      float tempAngle = (float) Math.atan2(yCamera, xCamera);
       this.angleCamera = tempAngle;
+      System.out.println("NewAngel:" + angleCamera);
       }
   }
   
