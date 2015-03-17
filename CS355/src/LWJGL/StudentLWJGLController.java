@@ -119,11 +119,15 @@ public class StudentLWJGLController implements CS355LWJGLController
         {
             System.out.println("You are pressing Q!");
             decressAngleCamera();
+            updateX();
+            updateZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_E)) 
         {
             System.out.println("You are pressing E!");
             incressAngleCamera();
+            updateX();
+            updateZ();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_R)) 
         {
@@ -161,7 +165,10 @@ public class StudentLWJGLController implements CS355LWJGLController
         glLoadIdentity();
         glRotatef(angleCamera, 0, 1, 0);
         glTranslatef(xCamera, yCamera, zCamera);
-        System.out.println("Angle" + angleCamera);
+        System.out.println("Angle: " + angleCamera);
+        System.out.println("X: " + xCamera);
+        System.out.println("Z: " + zCamera);
+        System.out.println("Y: " + yCamera);
     }
 
     //This method is the one that actually draws to the screen.
@@ -205,112 +212,23 @@ public class StudentLWJGLController implements CS355LWJGLController
              angleCamera++;
             }
     }
-    /*
-    public void moveForward(){
-        if(angleCamera < 90){
-            quad2();
-        }
-        else if(angleCamera < 125){
-            
-        }
-        else if(angleCamera < 180){
-           quad3();
-        }
-        
-        else if(angleCamera < 270){
-            quad4();
-        }
-        else if(angleCamera < 315){
-            
+    
+    public void updateX(){
+        if(angleCamera < 180){
+            xCamera = (float) Math.cos(Math.toRadians(this.angleCamera));
         }
         else{
-            quad1();
+            xCamera = (float)Math.cos(180 - Math.toRadians(this.angleCamera));
         }
     }
     
-    public void moveBackward(){
-        if(angleCamera < 90){
-            quad4();
-        }
-        else if(angleCamera < 125){
-            
-        }
-        else if(angleCamera < 180){
-            quad1();
-        }
-        
-        else if(angleCamera < 270){
-            quad2();
-        }
-        else if(angleCamera < 315){
-            
+    public void updateZ(){
+        if(angleCamera < 180){
+            zCamera = (float) Math.sin(180 - Math.toRadians(this.angleCamera));
         }
         else{
-            quad3();
+            zCamera = (float) Math.sin(180 - Math.toRadians(this.angleCamera));
         }
     }
     
-    public void moveLeft(){
-        if(angleCamera < 90){
-            quad1();
-        }
-        else if(angleCamera < 125){
-            
-        }
-        else if(angleCamera < 180){
-            quad2();
-        }
-        
-        else if(angleCamera < 270){
-            quad3();
-        }
-        else if(angleCamera < 315){
-            
-        }
-        else{
-            quad4();
-        }
-    }
-    
-    public void moveRight(){
-        if(angleCamera < 90){
-            quad3();
-        }
-        else if(angleCamera < 125){
-            
-        }
-        else if(angleCamera < 180){
-            quad4();
-        }
-        
-        else if(angleCamera < 270){
-            quad1();
-        }
-        else if(angleCamera < 315){
-            
-        }
-        else{
-            quad2();
-        }
-    }
-    /*
-    public void quad1(){
-        zCamera+= angleSin(this.angleCamera);
-        xCamera+= angleCos(this.angleCamera);
-    }
-    
-    public void quad2(){
-        zCamera+= angleCos(this.angleCamera);
-        xCamera-= angleSin(this.angleCamera);
-    }
-    
-    public void quad3(){
-        zCamera-= angleSin(this.angleCamera);
-        xCamera-= angleCos(this.angleCamera);
-    }
-    
-    public void quad4(){
-        zCamera-= angleCos(this.angleCamera);
-        xCamera+= angleSin(this.angleCamera);
-    }*/
 }
