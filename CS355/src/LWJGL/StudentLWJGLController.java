@@ -205,8 +205,21 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     
     public void moveForward(){
-        if(angleCamera < 179){
+        if(angleCamera < 90){
             quad2();
+        }
+        else if(angleCamera < 125){
+            
+        }
+        else if(angleCamera < 180){
+           quad3();
+        }
+        
+        else if(angleCamera < 270){
+            quad4();
+        }
+        else if(angleCamera < 315){
+            
         }
         else{
             quad1();
@@ -214,8 +227,21 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     
     public void moveBackward(){
-        if(angleCamera < 179){
+        if(angleCamera < 90){
             quad4();
+        }
+        else if(angleCamera < 125){
+            
+        }
+        else if(angleCamera < 180){
+            quad1();
+        }
+        
+        else if(angleCamera < 270){
+            quad2();
+        }
+        else if(angleCamera < 315){
+            
         }
         else{
             quad3();
@@ -223,8 +249,21 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     
     public void moveLeft(){
-        if(angleCamera < 179){
+        if(angleCamera < 90){
             quad1();
+        }
+        else if(angleCamera < 125){
+            
+        }
+        else if(angleCamera < 180){
+            quad2();
+        }
+        
+        else if(angleCamera < 270){
+            quad3();
+        }
+        else if(angleCamera < 315){
+            
         }
         else{
             quad4();
@@ -232,8 +271,21 @@ public class StudentLWJGLController implements CS355LWJGLController
     }
     
     public void moveRight(){
-        if(angleCamera < 179){
+        if(angleCamera < 90){
             quad3();
+        }
+        else if(angleCamera < 125){
+            
+        }
+        else if(angleCamera < 180){
+            quad4();
+        }
+        
+        else if(angleCamera < 270){
+            quad1();
+        }
+        else if(angleCamera < 315){
+            
         }
         else{
             quad2();
