@@ -47,19 +47,12 @@ public class StudentLWJGLController implements CS355LWJGLController
   //If not, I apologize.
   
   //Compensates for the angle
-  private float angleCos(float theta){
-      float z = (float) Math.sin((double)theta * (Math.PI / 180));
-      z = 1 - (z * z);
-      return z;
+  private void updateAngle(){
+      if(xCamera != 0){
+      float tempAngle = (float) ((180 / Math.PI) * Math.atan(yCamera / xCamera));
+      this.angleCamera = tempAngle;
+      }
   }
-  
-  //Compensates for the angle
-  private float angleSin(float theta){
-     float x = (float) Math.cos((double)theta * (Math.PI / 180));
-     x = 1 - (x * x);
-      return x;
-  }
-  
   
   private WireFrame model = new HouseModel();
 
@@ -96,22 +89,30 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            moveLeft();
+            //moveLeft();
+            xCamera++;
+           updateAngle();
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            moveRight();
+            //moveRight();
+            xCamera--;
+            updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
-            moveForward();
+           // moveForward();
+             zCamera--;
+             updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
-            moveBackward();
+            //moveBackward();
+             zCamera++;
+             updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
