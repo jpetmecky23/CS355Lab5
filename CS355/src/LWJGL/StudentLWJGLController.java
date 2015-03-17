@@ -49,7 +49,7 @@ public class StudentLWJGLController implements CS355LWJGLController
   //Compensates for the angle
   private void updateAngle(){
       if(xCamera != 0){
-      float tempAngle = (float) ((180 / Math.PI) * Math.atan(yCamera / xCamera));
+      float tempAngle = (float) (Math.toDegrees(Math.atan2(yCamera, xCamera)));
       this.angleCamera = tempAngle;
       }
   }
@@ -105,13 +105,13 @@ public class StudentLWJGLController implements CS355LWJGLController
         {
             System.out.println("You are pressing W!");
            // moveForward();
-             zCamera--;
+             zCamera++;
              updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             //moveBackward();
-             zCamera++;
+             zCamera--;
              updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
@@ -204,7 +204,7 @@ public class StudentLWJGLController implements CS355LWJGLController
              angleCamera++;
             }
     }
-    
+    /*
     public void moveForward(){
         if(angleCamera < 90){
             quad2();
@@ -292,7 +292,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad2();
         }
     }
-    
+    /*
     public void quad1(){
         zCamera+= angleSin(this.angleCamera);
         xCamera+= angleCos(this.angleCamera);
@@ -311,5 +311,5 @@ public class StudentLWJGLController implements CS355LWJGLController
     public void quad4(){
         zCamera-= angleCos(this.angleCamera);
         xCamera+= angleSin(this.angleCamera);
-    }
+    }*/
 }
