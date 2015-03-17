@@ -186,7 +186,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         }
         glPopMatrix();
     }
-       public void decressAngleCamera() {
+    public void decressAngleCamera() {
         if((angleCamera - 1) < 0){
                 angleCamera = 359;
             }
@@ -209,7 +209,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad2();
         }
         else if(angleCamera < 180){
-           
+           quad2();
         }
         
         else if(angleCamera < 270){
@@ -225,7 +225,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad4();
         }
         else if(angleCamera < 180){
-            
+            quad1();
         }
         
         else if(angleCamera < 270){
@@ -241,7 +241,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad1();
         }
         else if(angleCamera < 180){
-            
+            quad4();
         }
         
         else if(angleCamera < 270){
@@ -257,7 +257,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             quad3();
         }
         else if(angleCamera < 180){
-            
+            quad2();
         }
         
         else if(angleCamera < 270){
