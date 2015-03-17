@@ -92,7 +92,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing A!");
             //moveLeft();
             xCamera++;
-           updateAngle();
+          // updateAngle();
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
@@ -100,20 +100,20 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing D!");
             //moveRight();
             xCamera--;
-            updateAngle();
+           // updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
             System.out.println("You are pressing W!");
            // moveForward();
              zCamera++;
-             updateAngle();
+            // updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_S)) 
         {
             //moveBackward();
              zCamera--;
-             updateAngle();
+            // updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_Q)) 
         {
