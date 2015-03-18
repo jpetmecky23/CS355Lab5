@@ -179,8 +179,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         glPushMatrix();
         int color = 5;
         for(int i = 0; i < 5; i++){
-             color = 40 + color;
-            glColor3f(color - (color / 2), color, 0);
+             color = (int) (Math.random() * 255);
+            glColor3f(0, color, color);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
@@ -195,10 +195,9 @@ public class StudentLWJGLController implements CS355LWJGLController
         glRotatef(180, 0, 1, 0);
         glTranslatef(0, 0, -30);
         offset = 0;
-        color = 5;
         for(int j = 0; j < 5; j++){
-            color = 40 + color;
-            glColor3f(0, color, color - (color / 2));
+            color = (int) (Math.random() * 255);
+            glColor3f(color, 0, color);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
