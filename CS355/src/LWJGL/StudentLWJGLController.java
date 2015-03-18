@@ -90,15 +90,15 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            xCamera-= (float) Math.cos(Math.toRadians(this.angleCamera));
-            zCamera+= (float) Math.sin(Math.toRadians(this.angleCamera));
+            zCamera-= (float) Math.cos(Math.toRadians(this.angleCamera + 90));
+            xCamera+= (float) Math.sin(Math.toRadians(this.angleCamera+ 90));
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            xCamera+= (float) Math.cos(Math.toRadians(this.angleCamera));
-            zCamera-= (float) Math.sin(Math.toRadians(this.angleCamera));
+            zCamera+= (float) Math.cos(Math.toRadians(this.angleCamera + 90));
+            xCamera-= (float) Math.sin(Math.toRadians(this.angleCamera + 90));
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
