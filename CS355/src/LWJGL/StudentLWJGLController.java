@@ -199,13 +199,15 @@ public class StudentLWJGLController implements CS355LWJGLController
          colorG = 5;
          colorB = 255;
         for(int j = 0; j < 5; j++){
-            colorG = colorG + 40;
-            colorB -= 35;
-            glColor3f(colorG, 0, colorB);
+            
+            
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
                 for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
+                    colorG = colorG + 40;
+            colorB -= 35;
+                    glColor3f(colorG, 0, colorB);
                     Line3D l = iter.next();
                     glVertex3d(l.start.x, l.start.y, l.start.z);
                     glVertex3d(l.end.x, l.end.y, l.end.z);
