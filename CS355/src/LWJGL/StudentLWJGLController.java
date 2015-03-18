@@ -180,7 +180,7 @@ public class StudentLWJGLController implements CS355LWJGLController
         int color = 5;
         for(int i = 0; i < 5; i++){
              color = 5 * color;
-            glColor3f(color - (color / 5), color, 0);
+            glColor3f(color - (color / 2), color, 0);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
@@ -197,7 +197,8 @@ public class StudentLWJGLController implements CS355LWJGLController
         offset = 0;
         color = 5;
         for(int j = 0; j < 5; j++){
-            glColor3f(0, color, color - (color / 5));
+            color = 5 * color;
+            glColor3f(0, color, color - (color / 2));
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
