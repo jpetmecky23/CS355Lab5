@@ -48,11 +48,9 @@ public class StudentLWJGLController implements CS355LWJGLController
   
   //Compensates for the angle
   private void updateAngle(){
-      if(xCamera != 0){
-      float tempAngle = (float) Math.toDegrees(Math.atan2(zCamera, xCamera));
+      float tempAngle = (float) Math.toDegrees(Math.atan2(Math.abs(zCamera), Math.abs(xCamera)));
       this.angleCamera = tempAngle;
       System.out.println("NewAngel:" + angleCamera);
-      }
   }
   
   private WireFrame model = new HouseModel();
@@ -92,6 +90,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing A!");
             zCamera-= (float) Math.cos(Math.toRadians(this.modAngle(this.angleCamera + 90)));
             xCamera+= (float) Math.sin(Math.toRadians(this.modAngle(this.angleCamera + 90)));
+            updateAngle();
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
@@ -99,6 +98,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             System.out.println("You are pressing D!");
             zCamera+= (float) Math.cos(Math.toRadians(this.modAngle(this.angleCamera + 90)));
             xCamera-= (float) Math.sin(Math.toRadians(this.modAngle(this.angleCamera + 90)));
+            updateAngle();
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
