@@ -90,15 +90,15 @@ public class StudentLWJGLController implements CS355LWJGLController
         if(Keyboard.isKeyDown(Keyboard.KEY_A)) 
         {
             System.out.println("You are pressing A!");
-            zCamera-= (float) Math.sin(Math.toRadians(this.angleCamera));
-            xCamera+= (float) Math.cos(Math.toRadians(this.angleCamera));
+            zCamera-= (float) Math.cos(Math.toRadians(this.modAngle(this.angleCamera + 90)));
+            xCamera+= (float) Math.sin(Math.toRadians(this.modAngle(this.angleCamera + 90)));
             
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_D)) 
         {
             System.out.println("You are pressing D!");
-            zCamera+= (float) Math.sin(Math.toRadians(this.angleCamera));
-            xCamera-= (float) Math.cos(Math.toRadians(this.angleCamera));
+            zCamera+= (float) Math.cos(Math.toRadians(this.modAngle(this.angleCamera + 90)));
+            xCamera-= (float) Math.sin(Math.toRadians(this.modAngle(this.angleCamera + 90)));
         }
         if(Keyboard.isKeyDown(Keyboard.KEY_W)) 
         {
@@ -243,6 +243,10 @@ public class StudentLWJGLController implements CS355LWJGLController
             }
     }
     
+    public int modAngle(float amount){
+        return (int) (angleCamera + amount) % 359;
+    }
+    /*
     public void updateX(){
         if(angleCamera < 180){
             xCamera += (float) Math.cos(Math.toRadians(this.angleCamera));
@@ -259,6 +263,6 @@ public class StudentLWJGLController implements CS355LWJGLController
         else{
             zCamera -= (float) Math.sin(180 - Math.toRadians(this.angleCamera));
         }
-    }
+    }*/
     
 }
