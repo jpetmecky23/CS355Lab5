@@ -189,7 +189,7 @@ public class StudentLWJGLController implements CS355LWJGLController
             glEnd();
             offset = 15;
         }
-        
+        offset = 0;
         for(int i = 0; i < 5; i++){
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 30);
@@ -201,7 +201,7 @@ public class StudentLWJGLController implements CS355LWJGLController
                     glVertex3d(l.end.x, l.end.y, l.end.z);
                 }
             glEnd();
-            
+            offset = 15;
         }
         glPopMatrix();
     }
