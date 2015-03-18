@@ -176,10 +176,12 @@ public class StudentLWJGLController implements CS355LWJGLController
         float offset = 0;
         //Do your drawing here.
         glPushMatrix();
-        int color = 5;
+        int colorG = 5;
+        int colorB = 255;
         for(int i = 0; i < 5; i++){
-             color = (int) (Math.random() * 255);
-            glColor3f(0, color, color);
+             colorG = colorG + 40;
+             colorB -= 35;
+            glColor3f(0, colorG, colorB);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
             glBegin(GL_LINES);           
@@ -194,11 +196,14 @@ public class StudentLWJGLController implements CS355LWJGLController
         glRotatef(180, 0, 1, 0);
         glTranslatef(0, 0, -30);
         offset = 0;
+         colorG = 5;
+         colorB = 255;
         for(int j = 0; j < 5; j++){
-            color = (int) (Math.random() * 255);
+            colorG = colorG + 40;
+            colorB -= 35;
+            glColor3f(colorG, 0, colorB);
             glMatrixMode(GL_MODELVIEW);
             glTranslatef(offset, 0, 0);
-            glColor3f(color, 0, color);
             glBegin(GL_LINES);           
                 for(Iterator<Line3D> iter = model.getLines(); iter.hasNext();){
                     Line3D l = iter.next();
